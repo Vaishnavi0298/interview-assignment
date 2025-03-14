@@ -1,0 +1,59 @@
+<div class="row">
+  <div class="col-xxxl-5 col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+      <div class="listbox">
+          <p>{{sourceName}}</p>
+          <div class="record-picker">
+              <ul [ngStyle]="{'max-height': height, 'min-height': height}" [ngClass]="{over:available.dragOver}"
+                  (drop)="drop($event, confirmed)" (dragover)="allowDrop($event, available)"
+                  (dragleave)="dragLeave()">
+                  <li class="text-truncate" *ngFor="let item of available.sift; let idx=index;" [title]="item._name"
+                      (click)="selectItem(available.pick, item); shiftClick($event, idx, available, item)"
+                      [ngClass]="{selected: isItemSelected(available.pick, item)}" draggable="true"
+                      (dragstart)="drag($event, item, available)" (dragend)="dragEnd(available)">
+                      {{item._name}}
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  <div class="col-xxxl-2 col-xxl-2 col-xl-2 col-lg-2 col-md-2 buttonbox">
+      <div class="buttonbox">
+
+          <button type="button" class="btn btn-primary btn-block" (click)="moveItem(available, confirmed)"
+    [disabled]="available.pick.length === 0">
+    <i class="fas fa-arrow-right"></i>
+</button>
+<button type="button" class="btn btn-primary btn-block" (click)="moveAll()"
+    [disabled]="isAllSelected(available)">
+    <i class="fas fa-angle-double-right"></i>
+</button>
+<button type="button" class="btn btn-primary btn-block" (click)="moveItem(confirmed, available)"
+    [disabled]="confirmed.pick.length === 0">
+    <i class="fas fa-arrow-left"></i>
+</button>
+<button type="button" class="btn btn-primary btn-block" (click)="removeAll()"
+    [disabled]="isAllSelected(confirmed)">
+    <i class="fas fa-angle-double-left"></i>
+</button>
+
+      </div>
+  </div>
+  <div class="col-xxxl-5 col-xxl-5 col-xl-5 col-lg-5 col-md-5">
+      <div class="listbox">
+          <p>{{targetName}}</p>
+          <div class="record-picker">
+              <ul [ngStyle]="{'max-height': height, 'min-height': height}" [ngClass]="{over:confirmed.dragOver}"
+                  (drop)="drop($event, available)" (dragover)="allowDrop($event, confirmed)"
+                  (dragleave)="dragLeave()">
+                  <li class="text-truncate" *ngFor="let item of confirmed.sift; let idx=index;" [title]="item._name"
+                      (click)="selectItem(confirmed.pick, item); shiftClick($event, idx, confirmed, item)"
+                      [ngClass]="{selected: isItemSelected(confirmed.pick, item)}" draggable="true"
+                      (dragstart)="drag($event, item, confirmed)" (dragend)="dragEnd(confirmed)">
+                      {{item._name}}
+                  </li>
+              </ul>
+          </div>
+      </div>
+  </div>
+</div>
+<p>isAllSelected: {{ isAllSelected(confirmed) }}</p>

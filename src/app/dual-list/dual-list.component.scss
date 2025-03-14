@@ -1,0 +1,141 @@
+
+@import "@fortawesome/fontawesome-free/scss/fontawesome";
+
+div.record-picker {
+	overflow-x: hidden;
+	overflow-y: auto;
+	border: 1px solid #ddd;
+	position: relative;
+	cursor: pointer;
+}
+
+div.record-picker::-webkit-scrollbar-button {
+	width: 0px;
+	height: 0px;
+}
+
+div.record-picker::-webkit-scrollbar-track {
+	background: #eee;
+	box-shadow: 0px 0px 3px #dfdfdf inset;
+}
+
+div.record-picker::-webkit-scrollbar-thumb:hover {
+	background: #0076BE;
+}
+
+.record-picker ul {
+	margin: 0;
+	padding: 0 0 1px 0;
+}
+
+.record-picker li {
+	border-top: thin solid #ddd;
+	border-bottom: 1px solid #ddd;
+	display: block;
+	padding: 5px 5px 5px 10px;
+	margin-bottom: -1px;
+	font-size: 0.85em;
+	cursor: pointer;
+	white-space: nowrap;
+	min-height: 16px;
+	text-align: left;
+}
+
+.record-picker li:hover {
+	background-color: #F2F8FC;
+}
+
+.record-picker li.selected {
+	background-color: #d9edf7;
+}
+
+.record-picker li.selected:hover {
+	background-color: #c4e3f3;
+}
+
+.record-picker li.disabled {
+	opacity: 0.5;
+	cursor: default;
+}
+
+.record-picker li:first-child {
+	border-top: none;
+}
+
+.record-picker li:last-child {
+	border-bottom: none;
+}
+
+.record-picker label {
+	cursor: pointer;
+	font-weight: inherit;
+	font-size: 14px;
+	padding: 4px;
+	margin-bottom: -1px;
+	-webkit-touch-callout: none;
+	-webkit-user-select: none;
+	-khtml-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.record-picker ul.over {
+	background-color: lightgray;
+}
+
+.dual-list {
+	display: flex;
+	flex-direction: row;
+	align-content: flex-start;
+	justify-content: space-evenly;
+
+}
+
+.dual-list .listbox {
+	width: 35%;
+	margin: 0px;
+	flex-grow: 2;
+}
+
+.buttonbox {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+
+}
+
+.btn-block {
+	display: block;
+	width: 70px;
+	height: 37px;
+	margin: 4px;
+}
+
+button {
+	color: white;
+	font-size: 18px;
+	background: #0076BE;
+	padding: 5px 10px;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+button:hover {
+	background: #0076BE;
+	text-decoration: none;
+}
+
+button:disabled {
+	background: #bbbbbb;
+	border-color: transparent;
+	cursor: default;
+}
+
+p {
+	font-weight: 500;
+	font-size: 14px;
+	margin-bottom: 4px;
+}
