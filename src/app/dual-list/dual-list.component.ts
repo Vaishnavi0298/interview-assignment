@@ -28,7 +28,6 @@ export class DualListBoxComponent extends DualListComponent {
     this.moveItem(this.confirmed, this.available);
   }
 
-  // Override function in DualListComponent to add custom selectChange event.
   override selectItem(list: Array<any>, item: any) {
     debugger
     const pk = list.filter((e: any) => {
@@ -67,7 +66,7 @@ export class DualListBoxComponent extends DualListComponent {
     from.pick = [];
     to.pick = [];
   
-    // Manually trigger the event with the updated target list
+   
     this.destinationChange.emit(to.sift);
     
     console.log("Items moved. Updated confirmed list:", to.sift);
