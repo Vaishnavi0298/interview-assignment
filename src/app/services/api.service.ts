@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
 })
 export class ApiService {
 
-  private baseUrl = 'https://api.example.com'; 
+  private baseUrl = 'https://api.example.com';  //temprory 
 
   constructor(private http: HttpClient) {}
 
-  
+  //TODO call this function instead of dummy data
   getData(endpoint: string): Observable<any> {
     return this.http.get(`${this.baseUrl}/${endpoint}`);
   }
