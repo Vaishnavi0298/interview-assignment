@@ -11,20 +11,20 @@ export class CustomDualListComponent {
   constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
-    this.fetchData();
+ //   this.fetchData();
   }
 
-  fetchData(): void {
-    this.apiService.getData('items')
-      .subscribe(
-        (data) => {
-          console.log('Response:', data);
-           },
-        (error) => {
-          console.error('error', error);
-        }
-      );
-  }
+  // fetchData(): void {
+  // this.apiService.getData('items')
+  // .subscribe(
+  // (data) => {
+  // console.log('Response:', data);
+  // },
+  //(error) => {
+  //console.error('error', error);
+  // }
+  // );
+  // }
   list = [
     { _id: 1, name: 'Item 1' },
     { _id: 2, name: 'Item 2' },
