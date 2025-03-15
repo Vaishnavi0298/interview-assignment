@@ -50,7 +50,7 @@ export class CustomDualListComponent {
     none: 'Remove All',
     direction: 'left-to-right',
     draggable: true,
-    locale: 'en' // ✅ Fix: Add missing locale property
+    locale: 'en'
   };
   // destinationChange(event: any) {
   //   // console.log(event);
